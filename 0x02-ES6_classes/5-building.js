@@ -1,36 +1,20 @@
-/**
- * Abstract Class Building
- *
- * @class Building
- */
-
-class Building {
-  /**
-   * Creates a new @see {@link Building}.
-   *
-   * @param {Number} sqft - The size of the building in square feets
-   */
+export default class Building {
   constructor(sqft) {
-    this._sqft = sqft;
+    this.sqft = sqft;
+    if (this.constructor !== Building) {
+      if (typeof this.evacuationWarningMessage !== 'function') {
+        throw new Error(
+          'Class extending Building must override evacuationWarningMessage',
+        );
+      }
+    }
   }
 
-  get getSqft() {
+  get sqft() {
     return this._sqft;
   }
 
-  set setSqft(newSqft) {
-    if (typeof newSqft !== 'number') {
-      throw new TypeError('Sqft must be a number');
-    }
-    this._sqft = newSqft;
-  }
-
-  evacuationWarningMessage() {
-    throw new Error(
-      'Class extending Building must override evacuationWarningMessage' // eslint-disable-line comma-dangle
-    );
+  set sqft(value) {
+    this._sqft = value;
   }
 }
-
-const b = new Building(100);
-console.log(b);
