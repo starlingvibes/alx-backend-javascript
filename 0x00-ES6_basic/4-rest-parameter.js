@@ -1,8 +1,7 @@
 export default function returnHowManyArguments(...theArgs) {
-  let total = 0;
+  let arr = [];
   for (let arg of theArgs) {
-    // eslint-disable-line no-unused-vars
-    total += 1;
+    arr.push(arg);
   }
-  return total;
+  return arr.length;
 }
