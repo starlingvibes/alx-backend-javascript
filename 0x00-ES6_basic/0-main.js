@@ -8,6 +8,7 @@ import getSanFranciscoDescription from './6-string-interpolation.js';
 import getBudgetObject from './7-getBudgetObject.js';
 import getBudgetForCurrentYear from './8-getBudgetCurrentYear.js';
 import getFullBudgetObject from './9-getFullBudget.js';
+import appendToEachArrayValue from './10-loops.js';
 
 console.log(`${taskFirst()} ${taskNext()}`);
 console.log(taskBlock(true));
@@ -27,3 +28,6 @@ const fullBudget = getFullBudgetObject(20, 50, 10);
 
 console.log(fullBudget.getIncomeInDollars(fullBudget.income));
 console.log(fullBudget.getIncomeInEuros(fullBudget.income));
+console.log(
+  appendToEachArrayValue(['appended', 'fixed', 'displayed'], 'correctly-')
+);
