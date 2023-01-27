@@ -7,13 +7,13 @@ export default class HolbertonCourse {
    * @param {String[]} students - The names of students in the course.
    */
   constructor(name, length, students) {
-    this.name = name;
-    this.length = length;
-    this.students = students;
+    this._name = name;
+    this._length = length;
+    this._students = students;
   }
 
   get getName() {
-    return this.name;
+    return this._name;
   }
 
   set setName(newName) {
@@ -24,7 +24,7 @@ export default class HolbertonCourse {
   }
 
   get getLength() {
-    return this.length;
+    return this._length;
   }
 
   set setLength(newLength) {
@@ -35,7 +35,7 @@ export default class HolbertonCourse {
   }
 
   get getStudents() {
-    return this.students;
+    return this._students;
   }
 
   set setStudents(newStudents) {
