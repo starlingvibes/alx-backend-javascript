@@ -1,6 +1,7 @@
 /**
  * A weak map of endpoints and the number of calls made.
  */
+
 export const weakMap = new WeakMap();
 
 /**
