@@ -20,7 +20,7 @@ const countStudents = (dataPath) =>
           const studentRecord = line.split(',');
           const studentPropValues = studentRecord.slice(
             0,
-            studentRecord.length - 1
+            studentRecord.length - 1,
           );
           const field = studentRecord[studentRecord.length - 1];
           if (!Object.keys(studentGroups).includes(field)) {
@@ -34,7 +34,7 @@ const countStudents = (dataPath) =>
         }
 
         const totalStudents = Object.values(studentGroups).reduce(
-          (pre, cur) => (pre || []).length + cur.length
+          (pre, cur) => (pre || []).length + cur.length,
         );
         console.log(`Number of students: ${totalStudents}`);
         for (const [field, group] of Object.entries(studentGroups)) {
@@ -42,7 +42,7 @@ const countStudents = (dataPath) =>
             .map((student) => student.firstname)
             .join(', ');
           console.log(
-            `Number of students in ${field}: ${group.length}. List: ${studentNames}`
+            `Number of students in ${field}: ${group.length}. List: ${studentNames}`,
           );
         }
         resolve(true);
